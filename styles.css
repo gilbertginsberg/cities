@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #D32F2F;
+    color:#fff;
+    font-family: Arial, sans-serif;
+    font-size: medium;
+}
+
+.site-container {
+    display: grid;
+    
+}
+
+footer {
+    margin-top: 25px;
+    font-size: 75%;
+}
+
+a {
+    color: inherit;
+}
+
+a:hover {
+    color: #D32F2F;
+    background-color: #fff;
+}
