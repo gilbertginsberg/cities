@@ -7,15 +7,25 @@ body {
     color:#fff;
     font-family: Arial, sans-serif;
     font-size: medium;
+    height: 100vh;
 }
 
-.site-container {
+.grid-container {
     display: grid;
-    
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+
+input {
+    border: 5px solid cyan;
+    font-size: 100%;
 }
 
 footer {
-    margin-top: 25px;
+    position: absolute;
+    bottom: 11px;
+    left: 11px;
     font-size: 75%;
 }
 

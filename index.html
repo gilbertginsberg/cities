@@ -9,19 +9,19 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <div class="site-container">
-        <header>
-            <h1>Citay Search</h1>
-        </header>
+    <div class="grid-container">
         <main>
-            <div id="search-box-container">
-                <span>City Search:</span> <input type="text" id="search-box" placeholder="Seattle, WA">
-            </div>
-            <div id="results">
-
-            </div>
+            <form id="search-form">
+              <h2>Filter for a City or State</h2>
+              <input type="search" id="search-box" placeholder="Seattle">
+            </form>
+            <div id="results"></div>
         </main>
-        <footer><span lang="es">Desarrollado por el señor</span> <a href="https://www.gilbertindex.com/">Gilbert</a></footer>
+
+        <footer>
+            <span lang="es">Desarrollado por el señor</span> <a href="https://www.gilbertindex.com/">Gilbert</a>
+        </footer>
     </div>
+    <script src="main.js"></script>
   </body>
 </html>
