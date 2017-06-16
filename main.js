@@ -14,10 +14,14 @@ window.onload = () => {
   function displayFreshResults(data, event) { 
     const queries = document.createElement('div');
     results.appendChild(queries);
+
     data.forEach((datum) => {
-      const searchTerm = datum.city.slice(0, event.target.value.length);
-      if (searchTerm.includes(event.target.value)) {
-        console.log(`The search term is ${searchTerm}`);
+      const inputVal = event.target.value;
+      const capitalized = inputVal.replace(inputVal[0], inputVal[0].toUpperCase());
+      const chunk = datum.city.slice(0, event.target.value.length);
+ 
+      if (chunk.includes(capitalized)) {
+        console.log(`The search term is ${chunk}`);
         const div = document.createElement('div');
         div.innerText = datum.city;
         queries.appendChild(div);
