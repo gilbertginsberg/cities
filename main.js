@@ -4,12 +4,16 @@ window.onload = () => {
   const searchBox = document.getElementById('search-box');
   const results = document.getElementById('results');
 
- function removeResults() {
+  function removeResults() {
     if (results.hasChildNodes()) {
       console.log(`results.hasChildNodes() is ${results.hasChildNodes()}`);
       results.removeChild(results.firstChild);
     }
   }
+
+ function styleResults(el) {
+    el.classList.add('results-list');
+ }
 
   function displayFreshResults(data, event) { 
     const queries = document.createElement('div');
@@ -17,13 +21,15 @@ window.onload = () => {
 
     data.forEach((datum) => {
       const inputVal = event.target.value;
+      console.log(inputVal);
       const capitalized = inputVal.replace(inputVal[0], inputVal[0].toUpperCase());
       const chunk = datum.city.slice(0, event.target.value.length);
- 
-      if (chunk.includes(capitalized)) {
-        console.log(`The search term is ${chunk}`);
+
+      if (capitalized === chunk && capitalized !== '') {
+        console.log(`The search term is ${inputVal}`);
         const div = document.createElement('div');
-        div.innerText = datum.city;
+        div.innerText = `${datum.city}, ${datum.state} - Population: ${datum.population}`;
+        styleResults(div);
         queries.appendChild(div);
       }
     });
